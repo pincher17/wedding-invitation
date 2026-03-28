@@ -1,0 +1,18 @@
+<svg width="1200" height="1600" viewBox="0 0 1200 1600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1600" fill="#1D231B"/>
+  <rect x="72" y="72" width="1056" height="1456" rx="44" fill="url(#paint0_linear)"/>
+  <path d="M364 531C364 429.38 446.38 347 548 347C612.8 347 669.77 381.195 702 433.085C734.23 381.195 791.2 347 856 347C957.62 347 1040 429.38 1040 531C1040 697.25 861.874 813.286 717.155 939.924C708.274 947.697 695.726 947.697 686.845 939.924C542.126 813.286 364 697.25 364 531Z" fill="#6D1917"/>
+  <path d="M350 1048C350 951.381 428.381 873 525 873C586.829 873 641.209 905.547 672 954.943C702.791 905.547 757.171 873 819 873C915.619 873 994 951.381 994 1048C994 1206.11 824.555 1316.48 686.865 1436.99C678.42 1444.38 666.58 1444.38 658.135 1436.99C520.445 1316.48 350 1206.11 350 1048Z" fill="#9F5F63"/>
+  <text x="600" y="160" text-anchor="middle" fill="#F8F4EB" font-family="Georgia, serif" font-size="54" letter-spacing="12">
+    ADD YOUR PHOTO
+  </text>
+  <text x="600" y="228" text-anchor="middle" fill="#D9D7D0" font-family="Arial, sans-serif" font-size="28" letter-spacing="4">
+    public/assets/hero.jpg
+  </text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="600" y1="72" x2="600" y2="1528" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2F362D"/>
+      <stop offset="1" stop-color="#526048"/>
+    </linearGradient>
+  </defs>
+</svg>
