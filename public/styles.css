@@ -1863,10 +1863,10 @@ input[type="checkbox"]:active {
     font-size: var(--fs-button);
   }
   h2{
-    font-size: 40px;
+    font-size: 38px;
   }
   .transfer h2 {
-    font-size: 40px;
+    font-size: 38px;
   }
 }
 
