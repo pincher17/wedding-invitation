@@ -7,7 +7,7 @@
     ADD YOUR PHOTO
   </text>
   <text x="600" y="228" text-anchor="middle" fill="#D9D7D0" font-family="Arial, sans-serif" font-size="28" letter-spacing="4">
-    public/assets/hero.jpg
+    public/assets/hero.png
   </text>
   <defs>
     <linearGradient id="paint0_linear" x1="600" y1="72" x2="600" y2="1528" gradientUnits="userSpaceOnUse">

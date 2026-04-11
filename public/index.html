@@ -22,7 +22,7 @@
         <div class="hero__image-wrap">
           <img
             class="hero__image"
-            src="/assets/hero.jpg"
+            src="/assets/hero.png"
             alt="Главная фотография Михаила и Ольги"
             onerror="this.onerror=null;this.src='/assets/hero-placeholder.svg';"
           />
@@ -31,7 +31,11 @@
         <div class="hero__content">
           <div class="hero__top">
             <p class="eyebrow">Wedding day</p>
-            <h1>Михаил <span>&</span> Ольга</h1>
+            <h1 class="hero__title">
+              <span class="hero__title-line">Михаил</span>
+              <span class="hero__title-line hero__title-amp">&</span>
+              <span class="hero__title-line">Ольга</span>
+            </h1>
             <p class="hero__date">07 августа 2026</p>
           </div>
           <div class="hero__bottom">
@@ -49,26 +53,39 @@
       <main>
         <section class="section intro-card" id="intro">
           <div class="card">
-            <p class="section-label">Приглашение</p>
-            <h2>ЭТОТ МОМЕНТ НАСТАЛ!</h2>
-            <div class="intro-copy">
-              <p>
-                Случилось невероятное: наша безграничная любовь дала повод собрать всех родных и
-                близких вместе.
-              </p>
-              <p>
-                Без вас наша свадьба не будет такой же душевной и памятной.
-              </p>
-              <p>
-                Приглашаем отметить этот день вместе с нами.
-              </p>
+            <div class="intro-card__layout">
+              <h2>ЭТОТ МОМЕНТ НАСТАЛ!</h2>
+              <div class="intro-card__body">
+                <div class="intro-card__copy">
+                  <div class="intro-copy">
+                    <p>
+                      Случилось невероятное: наша безграничная любовь дала повод собрать всех
+                      родных и близких вместе
+                    </p>
+                    <p>
+                      Без вас наша свадьба не будет такой же душевной и памятной
+                    </p>
+                    <p>
+                      Приглашаем отметить этот день вместе с нами!
+                    </p>
+                  </div>
+                </div>
+                <figure class="intro-card__figure">
+                  <div class="intro-card__photo-shell">
+                    <img
+                      class="intro-card__photo"
+                      src="/assets/image.png"
+                      alt="Михаил и Ольга"
+                    />
+                  </div>
+                </figure>
+              </div>
             </div>
           </div>
         </section>
 
         <section class="section wedding-date">
           <div class="section-head">
-            <p class="section-label">Дата</p>
             <h2>Свадьба состоится</h2>
           </div>
           <div class="calendar-card">
@@ -123,7 +140,6 @@
 
         <section class="section countdown">
           <div class="section-head">
-            <p class="section-label">Обратный отсчет</p>
             <h2>До нашей свадьбы осталось</h2>
           </div>
           <div class="countdown-grid" data-countdown="2026-08-07T15:30:00+03:00">
@@ -148,7 +164,6 @@
 
         <section class="section timeline">
           <div class="section-head">
-            <p class="section-label">Тайминг</p>
             <h2>Программа дня</h2>
           </div>
           <div class="timeline-list">
@@ -206,7 +221,6 @@
 
         <section class="section dress-code">
           <div class="section-head">
-            <p class="section-label">Dress code</p>
             <h2>Дресс-код</h2>
           </div>
           <div class="card">
@@ -225,7 +239,6 @@
 
         <section class="section wishes">
           <div class="section-head">
-            <p class="section-label">Важно</p>
             <h2>Пожелания</h2>
           </div>
           <div class="wishes-grid">
@@ -256,8 +269,8 @@
         <section class="section transfer">
           <div class="card card--split">
             <div>
-              <p class="section-label">Трансфер</p>
-              <h2>Организуем дорогу для гостей</h2>
+              <h2>Трансфер</h2>
+              <p class="transfer-kicker">Организуем дорогу для гостей</p>
               <p>
                 Для вашего удобства будет организован трансфер. Точное время и место отправления
                 сообщим вам заранее.
@@ -268,7 +281,6 @@
 
         <section class="section contacts">
           <div class="section-head">
-            <p class="section-label">Контакты</p>
             <h2>Связаться с нами</h2>
           </div>
           <div class="card contact-card">
@@ -304,7 +316,6 @@
 
         <section class="section rsvp" id="rsvp">
           <div class="section-head">
-            <p class="section-label">RSVP</p>
             <h2>Анкета гостя</h2>
             <p class="section-copy">
               Пожалуйста, подтвердите своё присутствие и заполните анкету, чтобы мы смогли лучше
@@ -364,7 +375,16 @@
         </section>
 
         <section class="section footer-note">
-          <p>До скорой встречи, Михаил и Ольга</p>
+          <div class="footer-note__copy">
+            <p>До скорой</p>
+            <p>встречи,</p>
+            <p>Михаил</p>
+            <p>и</p>
+            <p>Ольга</p>
+          </div>
+          <figure class="footer-note__figure">
+            <img class="footer-note__image" src="/assets/image.png" alt="Михаил и Ольга" />
+          </figure>
         </section>
       </main>
     </div>
