@@ -484,7 +484,7 @@ small {
   border: 1px solid rgba(19, 19, 19, 0.1);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.14));
   padding: var(--space-40) var(--space-32);
-  padding: 90px;
+  padding-bottom: 90px;
 }
 
 .intro-card .card,
