@@ -390,7 +390,7 @@ small {
 .intro-card .card::before {
   position: absolute;
   inset: 14px;
-  border: 1px solid rgba(141, 126, 103, 0.16);
+  /* border: 1px solid rgba(141, 126, 103, 0.16); */
   pointer-events: none;
   content: "";
 }
