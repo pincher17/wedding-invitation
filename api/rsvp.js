@@ -20,11 +20,12 @@ export default async function handler(req) {
   const chatId = process.env.TELEGRAM_CHAT_ID;
 
   if (!botToken || !chatId) {
-    return json({
-      ok: false,
-      error: "ENV переменные не найдены"
-    }, 500);
+    return json({ ok: false, error: "ENV переменные не найдены" }, 500);
   }
+
+  // 🔥 ВАЖНО: таймаут
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 5000);
 
   try {
     const tgRes = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
@@ -35,8 +36,11 @@ export default async function handler(req) {
       body: JSON.stringify({
         chat_id: chatId,
         text: formatTelegramMessage(payload)
-      })
+      }),
+      signal: controller.signal
     });
+
+    clearTimeout(timeout);
 
     const text = await tgRes.text();
 
@@ -46,9 +50,14 @@ export default async function handler(req) {
     }
 
     return json({ ok: true, mode: "telegram" });
+
   } catch (error) {
     console.error("Fetch error:", error);
-    return json({ ok: false, error: "Ошибка отправки в Telegram" }, 500);
+
+    return json({
+      ok: false,
+      error: "Telegram не отвечает (timeout или сеть)"
+    }, 500);
   }
 }
 
