@@ -54,7 +54,7 @@ if (form) {
     };
 
     try {
-      const response = await fetch("/api/rsvp", {
+      const response = await fetch("../api/rsvp.js", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
