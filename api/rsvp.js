@@ -1,4 +1,8 @@
+export const config = {
+  runtime: 'edge',
+};
 export default async function handler(req) {
+  console.log("!!! API RSVP ВЫЗВАНА !!!", req.method);
   if (req.method !== "POST") {
     return json({ ok: false, error: "Method not allowed" }, 405);
   }
