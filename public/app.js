@@ -5,6 +5,25 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
 
 initRevealAnimations();
 
+function openPopup() {
+  const popup = document.querySelector('#success-popup');
+  if (popup) {
+    popup.classList.add('is-active');
+    document.body.style.overflow = 'hidden'; // чтобы сайт не скроллился под попапом
+  }
+}
+
+function closePopup() {
+  const popup = document.querySelector('#success-popup');
+  if (popup) {
+    popup.classList.remove('is-active');
+    document.body.style.overflow = ''; 
+  }
+}
+
+// Позволяем закрывать попап кликом по кнопке из HTML (через onclick)
+window.closePopup = closePopup;
+
 if (countdownRoot) {
   const targetDate = new Date(countdownRoot.dataset.countdown);
   const digitNodes = {
@@ -42,6 +61,7 @@ if (form) {
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     statusNode.textContent = "Отправляем анкету...";
+    statusNode.style.color = ""; // сбрасываем цвет на стандартный
 
     const formData = new FormData(form);
     const payload = {
@@ -63,14 +83,20 @@ if (form) {
       });
 
       const result = await response.json();
+      
       if (!response.ok || !result.ok) {
         throw new Error(result.error || "Ошибка отправки");
       }
 
-      statusNode.textContent = result.message || "Спасибо. Ваша анкета успешно отправлена.";
+      // Если всё успешно:
       form.reset();
+      statusNode.textContent = ""; 
+      openPopup(); // Показываем наше красивое окно
+
     } catch (error) {
+      console.error("Form error:", error);
       statusNode.textContent = error.message || "Не удалось отправить анкету.";
+      statusNode.style.color = "#7e1611"; // используем твой цвет --wine для ошибки
     }
   });
 }
