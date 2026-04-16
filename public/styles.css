@@ -236,7 +236,7 @@ img {
   }
 
   .hero__top {
-    top: 46%;
+    top: 36%;
     transform: translate(-50%, -50%);
   }
 
@@ -437,7 +437,7 @@ small {
 }
 
 .intro-copy p:first-child {
-  color: rgba(19, 19, 19, 0.9);
+  /* color: rgba(19, 19, 19, 0.9); */
 }
 
 .intro-copy p + p {
@@ -697,6 +697,7 @@ small {
   width: min(100%, var(--measure));
   max-width: var(--measure);
   margin-inline: auto;
+  color: rgba(19, 19, 19, 0.9);
 }
 
 .calendar-card__head {
@@ -737,8 +738,8 @@ small {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 112px;
-  height: 112px;
+  width: 80px;
+  height: 80px;
   transform: translate(-50%, -58%);
   background: url("/assets/heart.png") center / contain no-repeat;
   opacity: 1;
@@ -808,6 +809,8 @@ small {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--space-24);
   padding: var(--space-32) var(--space-24);
+  padding-top: 5px;
+    padding-bottom: 40px;
 }
 
 .countdown-item {
@@ -1549,6 +1552,7 @@ input[type="checkbox"]:active {
   .footer-note__copy p {
     font-size: clamp(2.9rem, 12vw, 4.8rem);
     line-height: 0.95;
+    font-size: 40px;
   }
 
   .footer-note__figure {
@@ -1576,7 +1580,7 @@ input[type="checkbox"]:active {
     width: 100%;
     padding-inline: var(--space-8);
     padding-bottom: var(--space-24);
-    top: 50%;
+    top: 35%;
     transform: translate(-50%, -50%);
   }
 
@@ -1665,6 +1669,8 @@ input[type="checkbox"]:active {
     justify-content: center;
     gap: var(--space-16);
     padding: var(--space-24) 0;
+    padding-top: 5px;
+        padding-bottom: 42px;
   }
 
   .countdown-item {
@@ -1771,13 +1777,39 @@ input[type="checkbox"]:active {
     min-height: 250px;
   }
 
+  .contacts .section-head{
+    margin-bottom: 25px;
+  }
+
+  .dress-code .section-head{
+    margin-bottom: 25px;
+  }
+
+  .wishes .section-head{
+    margin-bottom: 25px;
+    margin-top: 40px;
+  }
+
   .checkbox-grid {
     grid-template-columns: 1fr;
+  }
+
+  .location .section-head{
+    margin-bottom: 15px;
+  }
+
+    .wedding-date .section-head{
+    margin-bottom: -15px;
+  }
+
+  .intro-card .card h2, .location-card h2, .dress-code h2, .wishes h2, .contacts h2, .telegram h2, .rsvp h2{
+    margin-bottom: 0;
   }
 
   .rsvp {
     padding-top: var(--space-56);
     padding-bottom: var(--space-24);
+    padding-bottom: 0;
   }
 
   .rsvp .section-head {
@@ -1793,6 +1825,7 @@ input[type="checkbox"]:active {
   .rsvp-form {
     gap: var(--space-32);
     padding: var(--space-16) var(--space-8) var(--space-32);
+    padding-bottom: 0;
   }
 
   .field,
@@ -1802,9 +1835,10 @@ input[type="checkbox"]:active {
 
   .field span,
   .field-group legend {
-    font-size: var(--fs-h3);
+    /* font-size: var(--fs-h3); */
     margin-bottom: var(--space-24);
     line-height: 1.12;
+    font-size: 24px;
   }
 
   .field--compact-heading span {
@@ -1848,15 +1882,19 @@ input[type="checkbox"]:active {
   }
 
   .palette-dots {
-    margin-top: var(--space-32);
+    /* margin-top: var(--space-32); */
     padding-left: var(--space-8);
+    margin-top: 10px;
   }
 
   .palette-dots span {
     width: 95px;
     margin-left: calc(-1 * var(--space-16));
   }
-
+.first_last_name_span{
+  margin-bottom: 0 !important;
+  margin-top: 10px;
+}
   .button {
     min-width: 220px;
     min-height: 44px;

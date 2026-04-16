@@ -1,20 +1,14 @@
-export default async function handler(request) {
-  if (request.method !== "POST") {
+export default async function handler(req) {
+  if (req.method !== "POST") {
     return json({ ok: false, error: "Method not allowed" }, 405);
   }
 
   let payload;
 
   try {
-    payload = await request.json();
+    payload = await req.json();
   } catch {
-    return json(
-      {
-        ok: false,
-        error: "Invalid JSON body"
-      },
-      400
-    );
+    return json({ ok: false, error: "Invalid JSON body" }, 400);
   }
 
   const validationError = validatePayload(payload);
@@ -27,14 +21,13 @@ export default async function handler(request) {
 
   if (!botToken || !chatId) {
     return json({
-      ok: true,
-      mode: "local",
-      message: "Анкета сохранена локально. Для Telegram добавьте TELEGRAM_BOT_TOKEN и TELEGRAM_CHAT_ID."
-    });
+      ok: false,
+      error: "ENV переменные не найдены"
+    }, 500);
   }
 
   try {
-    const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+    const tgRes = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -45,15 +38,17 @@ export default async function handler(request) {
       })
     });
 
-    if (!response.ok) {
-      const telegramError = await response.text();
-      throw new Error(`Telegram API error: ${response.status} ${telegramError}`);
+    const text = await tgRes.text();
+
+    if (!tgRes.ok) {
+      console.error("Telegram error:", text);
+      return json({ ok: false, error: text }, 500);
     }
 
     return json({ ok: true, mode: "telegram" });
   } catch (error) {
-    console.error(error);
-    return json({ ok: false, error: "Не удалось отправить данные в Telegram." }, 502);
+    console.error("Fetch error:", error);
+    return json({ ok: false, error: "Ошибка отправки в Telegram" }, 500);
   }
 }
 
